@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9C8D35A01D9DB87C00C90AEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D359F1D9DB87C00C90AEC /* AppDelegate.swift */; };
+		9C8D35A21D9DB87C00C90AEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D35A11D9DB87C00C90AEC /* ViewController.swift */; };
+		9C8D35A51D9DB87C00C90AEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D35A31D9DB87C00C90AEC /* Main.storyboard */; };
+		9C8D35A71D9DB87C00C90AEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D35A61D9DB87C00C90AEC /* Assets.xcassets */; };
+		9C8D35AA1D9DB87C00C90AEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D35A81D9DB87C00C90AEC /* LaunchScreen.storyboard */; };
+		9C8D35B51D9DB87C00C90AEC /* HelloSpheroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D35B41D9DB87C00C90AEC /* HelloSpheroTests.swift */; };
+		9C8D35C01D9DB87C00C90AEC /* HelloSpheroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D35BF1D9DB87C00C90AEC /* HelloSpheroUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9C8D35B11D9DB87C00C90AEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C8D35941D9DB87C00C90AEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C8D359B1D9DB87C00C90AEC;
+			remoteInfo = HelloSphero;
+		};
+		9C8D35BC1D9DB87C00C90AEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C8D35941D9DB87C00C90AEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C8D359B1D9DB87C00C90AEC;
+			remoteInfo = HelloSphero;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9C8D359C1D9DB87C00C90AEC /* HelloSphero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSphero.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C8D359F1D9DB87C00C90AEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9C8D35A11D9DB87C00C90AEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9C8D35A41D9DB87C00C90AEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9C8D35A61D9DB87C00C90AEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9C8D35A91D9DB87C00C90AEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9C8D35AB1D9DB87C00C90AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C8D35B01D9DB87C00C90AEC /* HelloSpheroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloSpheroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C8D35B41D9DB87C00C90AEC /* HelloSpheroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSpheroTests.swift; sourceTree = "<group>"; };
+		9C8D35B61D9DB87C00C90AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C8D35BB1D9DB87C00C90AEC /* HelloSpheroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloSpheroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C8D35BF1D9DB87C00C90AEC /* HelloSpheroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSpheroUITests.swift; sourceTree = "<group>"; };
+		9C8D35C11D9DB87C00C90AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C8D35991D9DB87C00C90AEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C8D35AD1D9DB87C00C90AEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C8D35B81D9DB87C00C90AEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9C8D35931D9DB87C00C90AEC = {
+			isa = PBXGroup;
+			children = (
+				9C8D359E1D9DB87C00C90AEC /* HelloSphero */,
+				9C8D35B31D9DB87C00C90AEC /* HelloSpheroTests */,
+				9C8D35BE1D9DB87C00C90AEC /* HelloSpheroUITests */,
+				9C8D359D1D9DB87C00C90AEC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9C8D359D1D9DB87C00C90AEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C8D359C1D9DB87C00C90AEC /* HelloSphero.app */,
+				9C8D35B01D9DB87C00C90AEC /* HelloSpheroTests.xctest */,
+				9C8D35BB1D9DB87C00C90AEC /* HelloSpheroUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C8D359E1D9DB87C00C90AEC /* HelloSphero */ = {
+			isa = PBXGroup;
+			children = (
+				9C8D359F1D9DB87C00C90AEC /* AppDelegate.swift */,
+				9C8D35A11D9DB87C00C90AEC /* ViewController.swift */,
+				9C8D35A31D9DB87C00C90AEC /* Main.storyboard */,
+				9C8D35A61D9DB87C00C90AEC /* Assets.xcassets */,
+				9C8D35A81D9DB87C00C90AEC /* LaunchScreen.storyboard */,
+				9C8D35AB1D9DB87C00C90AEC /* Info.plist */,
+			);
+			path = HelloSphero;
+			sourceTree = "<group>";
+		};
+		9C8D35B31D9DB87C00C90AEC /* HelloSpheroTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C8D35B41D9DB87C00C90AEC /* HelloSpheroTests.swift */,
+				9C8D35B61D9DB87C00C90AEC /* Info.plist */,
+			);
+			path = HelloSpheroTests;
+			sourceTree = "<group>";
+		};
+		9C8D35BE1D9DB87C00C90AEC /* HelloSpheroUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9C8D35BF1D9DB87C00C90AEC /* HelloSpheroUITests.swift */,
+				9C8D35C11D9DB87C00C90AEC /* Info.plist */,
+			);
+			path = HelloSpheroUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C8D359B1D9DB87C00C90AEC /* HelloSphero */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C8D35C41D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "HelloSphero" */;
+			buildPhases = (
+				9C8D35981D9DB87C00C90AEC /* Sources */,
+				9C8D35991D9DB87C00C90AEC /* Frameworks */,
+				9C8D359A1D9DB87C00C90AEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelloSphero;
+			productName = HelloSphero;
+			productReference = 9C8D359C1D9DB87C00C90AEC /* HelloSphero.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C8D35AF1D9DB87C00C90AEC /* HelloSpheroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C8D35C71D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "HelloSpheroTests" */;
+			buildPhases = (
+				9C8D35AC1D9DB87C00C90AEC /* Sources */,
+				9C8D35AD1D9DB87C00C90AEC /* Frameworks */,
+				9C8D35AE1D9DB87C00C90AEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C8D35B21D9DB87C00C90AEC /* PBXTargetDependency */,
+			);
+			name = HelloSpheroTests;
+			productName = HelloSpheroTests;
+			productReference = 9C8D35B01D9DB87C00C90AEC /* HelloSpheroTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9C8D35BA1D9DB87C00C90AEC /* HelloSpheroUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C8D35CA1D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "HelloSpheroUITests" */;
+			buildPhases = (
+				9C8D35B71D9DB87C00C90AEC /* Sources */,
+				9C8D35B81D9DB87C00C90AEC /* Frameworks */,
+				9C8D35B91D9DB87C00C90AEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C8D35BD1D9DB87C00C90AEC /* PBXTargetDependency */,
+			);
+			name = HelloSpheroUITests;
+			productName = HelloSpheroUITests;
+			productReference = 9C8D35BB1D9DB87C00C90AEC /* HelloSpheroUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C8D35941D9DB87C00C90AEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Gabrielle;
+				TargetAttributes = {
+					9C8D359B1D9DB87C00C90AEC = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 654CT3KEZ7;
+						ProvisioningStyle = Automatic;
+					};
+					9C8D35AF1D9DB87C00C90AEC = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 654CT3KEZ7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9C8D359B1D9DB87C00C90AEC;
+					};
+					9C8D35BA1D9DB87C00C90AEC = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 654CT3KEZ7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9C8D359B1D9DB87C00C90AEC;
+					};
+				};
+			};
+			buildConfigurationList = 9C8D35971D9DB87C00C90AEC /* Build configuration list for PBXProject "HelloSphero" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9C8D35931D9DB87C00C90AEC;
+			productRefGroup = 9C8D359D1D9DB87C00C90AEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C8D359B1D9DB87C00C90AEC /* HelloSphero */,
+				9C8D35AF1D9DB87C00C90AEC /* HelloSpheroTests */,
+				9C8D35BA1D9DB87C00C90AEC /* HelloSpheroUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C8D359A1D9DB87C00C90AEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C8D35AA1D9DB87C00C90AEC /* LaunchScreen.storyboard in Resources */,
+				9C8D35A71D9DB87C00C90AEC /* Assets.xcassets in Resources */,
+				9C8D35A51D9DB87C00C90AEC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C8D35AE1D9DB87C00C90AEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C8D35B91D9DB87C00C90AEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C8D35981D9DB87C00C90AEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C8D35A21D9DB87C00C90AEC /* ViewController.swift in Sources */,
+				9C8D35A01D9DB87C00C90AEC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C8D35AC1D9DB87C00C90AEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C8D35B51D9DB87C00C90AEC /* HelloSpheroTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C8D35B71D9DB87C00C90AEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C8D35C01D9DB87C00C90AEC /* HelloSpheroUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C8D35B21D9DB87C00C90AEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C8D359B1D9DB87C00C90AEC /* HelloSphero */;
+			targetProxy = 9C8D35B11D9DB87C00C90AEC /* PBXContainerItemProxy */;
+		};
+		9C8D35BD1D9DB87C00C90AEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C8D359B1D9DB87C00C90AEC /* HelloSphero */;
+			targetProxy = 9C8D35BC1D9DB87C00C90AEC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9C8D35A31D9DB87C00C90AEC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C8D35A41D9DB87C00C90AEC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9C8D35A81D9DB87C00C90AEC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C8D35A91D9DB87C00C90AEC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C8D35C21D9DB87C00C90AEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9C8D35C31D9DB87C00C90AEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C8D35C51D9DB87C00C90AEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 654CT3KEZ7;
+				INFOPLIST_FILE = HelloSphero/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.HelloSphero;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9C8D35C61D9DB87C00C90AEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 654CT3KEZ7;
+				INFOPLIST_FILE = HelloSphero/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.HelloSphero;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		9C8D35C81D9DB87C00C90AEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 654CT3KEZ7;
+				INFOPLIST_FILE = HelloSpheroTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.HelloSpheroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelloSphero.app/HelloSphero";
+			};
+			name = Debug;
+		};
+		9C8D35C91D9DB87C00C90AEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 654CT3KEZ7;
+				INFOPLIST_FILE = HelloSpheroTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.HelloSpheroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelloSphero.app/HelloSphero";
+			};
+			name = Release;
+		};
+		9C8D35CB1D9DB87C00C90AEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 654CT3KEZ7;
+				INFOPLIST_FILE = HelloSpheroUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.HelloSpheroUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = HelloSphero;
+			};
+			name = Debug;
+		};
+		9C8D35CC1D9DB87C00C90AEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 654CT3KEZ7;
+				INFOPLIST_FILE = HelloSpheroUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.HelloSpheroUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = HelloSphero;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C8D35971D9DB87C00C90AEC /* Build configuration list for PBXProject "HelloSphero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C8D35C21D9DB87C00C90AEC /* Debug */,
+				9C8D35C31D9DB87C00C90AEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C8D35C41D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "HelloSphero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C8D35C51D9DB87C00C90AEC /* Debug */,
+				9C8D35C61D9DB87C00C90AEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9C8D35C71D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "HelloSpheroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C8D35C81D9DB87C00C90AEC /* Debug */,
+				9C8D35C91D9DB87C00C90AEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9C8D35CA1D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "HelloSpheroUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C8D35CB1D9DB87C00C90AEC /* Debug */,
+				9C8D35CC1D9DB87C00C90AEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C8D35941D9DB87C00C90AEC /* Project object */;
+}
