@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C8663321DA6D903001B8DBB /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8663311DA6D903001B8DBB /* RobotKit.framework */; };
 		9C8D35A01D9DB87C00C90AEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D359F1D9DB87C00C90AEC /* AppDelegate.swift */; };
 		9C8D35A21D9DB87C00C90AEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D35A11D9DB87C00C90AEC /* ViewController.swift */; };
 		9C8D35A51D9DB87C00C90AEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D35A31D9DB87C00C90AEC /* Main.storyboard */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C8663301DA6C1CE001B8DBB /* HelloSphero-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HelloSphero-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C8663311DA6D903001B8DBB /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RobotKit.framework; sourceTree = "<group>"; };
 		9C8D359C1D9DB87C00C90AEC /* HelloSphero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSphero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8D359F1D9DB87C00C90AEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C8D35A11D9DB87C00C90AEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C8663321DA6D903001B8DBB /* RobotKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C86632D1DA6BF32001B8DBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C8663311DA6D903001B8DBB /* RobotKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9C8D35931D9DB87C00C90AEC = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +93,7 @@
 				9C8D35B31D9DB87C00C90AEC /* HelloSpheroTests */,
 				9C8D35BE1D9DB87C00C90AEC /* HelloSpheroUITests */,
 				9C8D359D1D9DB87C00C90AEC /* Products */,
+				9C86632D1DA6BF32001B8DBB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +116,7 @@
 				9C8D35A61D9DB87C00C90AEC /* Assets.xcassets */,
 				9C8D35A81D9DB87C00C90AEC /* LaunchScreen.storyboard */,
 				9C8D35AB1D9DB87C00C90AEC /* Info.plist */,
+				9C8663301DA6C1CE001B8DBB /* HelloSphero-Bridging-Header.h */,
 			);
 			path = HelloSphero;
 			sourceTree = "<group>";
@@ -195,6 +209,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 654CT3KEZ7;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					9C8D35AF1D9DB87C00C90AEC = {
 						CreatedOnToolsVersion = 8.0;
@@ -416,12 +435,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 654CT3KEZ7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Users/Gabrielle/Documents/2016-09-Fall-CU/SpheroProject/Sphero-iOS-SDK-master/frameworks",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = HelloSphero/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.HelloSphero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Gabrielle/Documents/2016-09-Fall-CU/SpheroProject/Sphero-iOS-SDK-master/samples/HelloSphero/HelloSphero/HelloSphero-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -430,12 +459,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 654CT3KEZ7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Users/Gabrielle/Documents/2016-09-Fall-CU/SpheroProject/Sphero-iOS-SDK-master/frameworks",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = HelloSphero/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.HelloSphero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Gabrielle/Documents/2016-09-Fall-CU/SpheroProject/Sphero-iOS-SDK-master/samples/HelloSphero/HelloSphero/HelloSphero-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -516,6 +555,7 @@
 				9C8D35C61D9DB87C00C90AEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C8D35C71D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "HelloSpheroTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +564,7 @@
 				9C8D35C91D9DB87C00C90AEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C8D35CA1D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "HelloSpheroUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +573,7 @@
 				9C8D35CC1D9DB87C00C90AEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
