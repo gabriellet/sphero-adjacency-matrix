@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C8663321DA6D903001B8DBB /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C8663311DA6D903001B8DBB /* RobotKit.framework */; };
+		9C79D9821DB02C0700FAE4DA /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C79D9811DB02C0700FAE4DA /* RobotKit.framework */; };
 		9C8D35A01D9DB87C00C90AEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D359F1D9DB87C00C90AEC /* AppDelegate.swift */; };
 		9C8D35A21D9DB87C00C90AEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D35A11D9DB87C00C90AEC /* ViewController.swift */; };
 		9C8D35A51D9DB87C00C90AEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D35A31D9DB87C00C90AEC /* Main.storyboard */; };
@@ -35,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C79D9811DB02C0700FAE4DA /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotKit.framework; path = "../../../orbotix-Sphero-iOS-SDK-7b5576c/frameworks/RobotKit.framework"; sourceTree = "<group>"; };
 		9C8663301DA6C1CE001B8DBB /* HelloSphero-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HelloSphero-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C8663311DA6D903001B8DBB /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RobotKit.framework; sourceTree = "<group>"; };
 		9C8D359C1D9DB87C00C90AEC /* HelloSphero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSphero.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,7 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C8663321DA6D903001B8DBB /* RobotKit.framework in Frameworks */,
+				9C79D9821DB02C0700FAE4DA /* RobotKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +82,7 @@
 		9C86632D1DA6BF32001B8DBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C79D9811DB02C0700FAE4DA /* RobotKit.framework */,
 				9C8663311DA6D903001B8DBB /* RobotKit.framework */,
 			);
 			name = Frameworks;
@@ -436,7 +438,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 654CT3KEZ7;
 				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/Gabrielle/Documents/2016-09-Fall-CU/SpheroProject/Sphero-iOS-SDK-master/frameworks",
+					"/Users/Gabrielle/Documents/Columbia/Sem7/SpheroProject/Sphero-iOS-SDK-master/frameworks",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HelloSphero/Info.plist;
@@ -448,7 +450,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.HelloSphero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Gabrielle/Documents/2016-09-Fall-CU/SpheroProject/Sphero-iOS-SDK-master/samples/HelloSphero/HelloSphero/HelloSphero-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Gabrielle/Documents/Columbia/Sem7/SpheroProject/Sphero-iOS-SDK-master/samples/HelloSphero/HelloSphero/HelloSphero-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
@@ -460,7 +462,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 654CT3KEZ7;
 				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/Gabrielle/Documents/2016-09-Fall-CU/SpheroProject/Sphero-iOS-SDK-master/frameworks",
+					"/Users/Gabrielle/Documents/Columbia/Sem7/SpheroProject/Sphero-iOS-SDK-master/frameworks",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HelloSphero/Info.plist;
@@ -472,7 +474,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.HelloSphero;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Gabrielle/Documents/2016-09-Fall-CU/SpheroProject/Sphero-iOS-SDK-master/samples/HelloSphero/HelloSphero/HelloSphero-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Gabrielle/Documents/Columbia/Sem7/SpheroProject/Sphero-iOS-SDK-master/samples/HelloSphero/HelloSphero/HelloSphero-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};

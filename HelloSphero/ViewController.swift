@@ -26,19 +26,28 @@ class ViewController: UIViewController {
     var backwardStep: Double = 0.0
     
     var robot: RKConvenienceRobot!
+    var robotBase: RKRobotBase!
+    
+    var hdg: Float = 0.0
+    var dst: Float = 0.0
+    
+    enum DriveDir {
+        case left
+        case right
+        case forward
+        case backward
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.applicationWillResignActive(_:)), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
         //NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.applicationDidBecomeActive(_:)), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.applicationWillResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.applicationDidBecomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         
-        
-        //Original line that worked in swift 2
-        //RKRobotDiscoveryAgent.sharedAgent().addNotificationObserver(self, selector: #selector(ViewController.handleRobotStateChangeNotification(_:)))
-        
-        //Broken line
-        //RKRobotDiscoveryAgent.shared().addNotificationObserver(self, selector: #selector(ViewController.handleRobotStateChangeNotification(_:)))
+        startDiscovery()
+        RKRobotDiscoveryAgent.shared().addNotificationObserver(self, selector: #selector(handleRobotStateChangeNotification))
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,10 +67,15 @@ class ViewController: UIViewController {
 
     @IBAction func buttonPress(_ sender: UIButton) {
         switch (sender.tag) {
-            case 0: responseText.text = "Drive left \(leftStep)"
+            case 0:
+                responseText.text = "Drive left \(leftStep)"
+                directionControl(dir: .left)
             case 1: responseText.text = "Drive right \(rightStep)"
+                directionControl(dir: .right)
             case 2: responseText.text = "Drive forward \(forwardStep)"
+                directionControl(dir: .forward)
             case 3: responseText.text = "Drive backward \(backwardStep)"
+                directionControl(dir: .backward)
             default: responseText.text = "-----"
         }
         //responseText.text = "Greetings mortals."
@@ -70,6 +84,7 @@ class ViewController: UIViewController {
 
     @IBAction func sayHello(_ sender: UIButton) {
         responseText.text = "Hello World!"
+        toggleLED()
     }
     
     @IBAction func stepperPress(_ sender: UIStepper) {
@@ -111,8 +126,33 @@ class ViewController: UIViewController {
         }
     }
     
-    func directionControl() {
-        
+    func directionControl(dir: DriveDir) {
+        NSLog("I believe I can drive")
+        switch dir {
+        case .left: hdg = 270.0
+            dst = Float(leftStep)
+        case .right: hdg = 90.0
+            dst = Float(rightStep)
+        case .backward: hdg = 180.0
+            dst = Float(backwardStep)
+        case .forward: hdg = 0.0
+            dst = Float(forwardStep)
+        }
+        drive()
+    }
+    
+    func drive() {
+        if let robot = self.robot {
+            robot.setLEDWithRed(0.7, green: 0.0, blue: 0.2)
+            NSLog("heading: \(hdg), distance: \(dst)")
+            //DispatchQueue.main.asyncAfter(deadline: .now()) {
+                //robot.send(RKRollCommand(heading: self.hdg, velocity: 1.0, andDistance: self.dst))
+            //}
+            robot.drive(withHeading: hdg, andVelocity: dst)
+            //self.robot.send(RKSetHeadingCommand(heading: 0.0))
+            //self.robot.send(RKRollCommand(heading: hdg, velocity: 1.0, andDistance: dst))
+            NSLog("One small step for Gabrielle, one large roll for me.")
+        }
     }
     
     
@@ -131,7 +171,7 @@ class ViewController: UIViewController {
                 self.robot = RKConvenienceRobot(robot: noteRobot);
                 connectionLabel.text = noteRobot.name()
                 //directionControl()
-                toggleLED()
+                //toggleLED()
             }
             break
         case .disconnected:
