@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, RKResponseObserver {
 
     //MARK: Properties
     @IBOutlet weak var responseText: UILabel!
@@ -38,16 +38,20 @@ class ViewController: UIViewController {
         case backward
     }
     
+    var collisionTime: TimeInterval = TimeInterval(0.0)
+    var collisionSpeed: Float = 0.0
+    var collisionAxisX: Bool = false
+    var collisionAxisY: Bool = false
+    
+    var locatorPositionX: Float = 0.0
+    var locatorPositionY: Float = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        // NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.applicationWillResignActive(_:)), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
-        //NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.applicationDidBecomeActive(_:)), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
-        //NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.applicationWillResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
-        //NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.applicationDidBecomeActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
-        
         startDiscovery()
         RKRobotDiscoveryAgent.shared().addNotificationObserver(self, selector: #selector(handleRobotStateChangeNotification))
+        //RKRobotDiscoveryAgent.shared().addNotificationObserver(self, selector: #selector(handleAsyncMessage))
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,11 +62,11 @@ class ViewController: UIViewController {
     //MARK: Actions
     
     @IBAction func sleepButtonPress(_ sender: UIButton) {
-        //if let robot = self.robot {
+        if let robot = self.robot {
             responseText.text = "Goodnight"
             connectionLabel.text = "Sleeping"
-            robot!.sleep()
-        //}
+            robot.sleep()
+        }
     }
 
     @IBAction func buttonPress(_ sender: UIButton) {
@@ -84,7 +88,8 @@ class ViewController: UIViewController {
 
     @IBAction func sayHello(_ sender: UIButton) {
         responseText.text = "Hello World!"
-        toggleLED()
+        //toggleLED()
+        rainbowLED()
     }
     
     @IBAction func stepperPress(_ sender: UIStepper) {
@@ -110,6 +115,18 @@ class ViewController: UIViewController {
     
     func stopDiscovery() {
         RKRobotDiscoveryAgent.stopDiscovery()
+    }
+    
+    func rainbowLED() {
+        if let robot = self.robot {
+            NSLog("Hello world!")
+            robot.setLEDWithRed(0.0, green: 0.0, blue: 0.0)
+            robot.setLEDWithRed(0.5, green: 0.0, blue: 0.0)
+            robot.setLEDWithRed(0.0, green: 0.0, blue: 0.0)
+            robot.setLEDWithRed(0.0, green: 0.5, blue: 0.0)
+            robot.setLEDWithRed(0.0, green: 0.0, blue: 0.0)
+            robot.setLEDWithRed(0.0, green: 0.0, blue: 0.5)
+        }
     }
     
     func toggleLED() {
@@ -155,6 +172,26 @@ class ViewController: UIViewController {
         }
     }
     
+    func handle(_ message: RKAsyncMessage!, forRobot robot: RKRobotBase!) {
+        NSLog("Async Message")
+        if let sensorMessage = message as? RKDeviceSensorsAsyncData {
+            NSLog("RKDeviceSensor message")
+            let sensorData = sensorMessage.dataFrames.last as? RKDeviceSensorsData
+            let locator = sensorData?.locatorData
+            locatorPositionX = locator!.position.x
+            locatorPositionY = locator!.position.y
+            NSLog("Current Position:(\(locatorPositionX), \(locatorPositionY))")
+            
+        }
+        else if let sensorMessage = message as? RKCollisionDetectedAsyncData {
+            NSLog("RKCollisionDetected message")
+            collisionTime = sensorMessage.impactTimeStamp
+            collisionSpeed = sensorMessage.impactSpeed
+            collisionAxisX = sensorMessage.impactAxis.x
+            collisionAxisY = sensorMessage.impactAxis.y
+            NSLog("Colllision detected: \(collisionTime), \(collisionSpeed), \(collisionAxisX), \(collisionAxisY)")
+        }
+    }
     
     func handleRobotStateChangeNotification(notification: RKRobotChangedStateNotification) {
         guard let noteRobot = notification.robot else {return}
@@ -168,8 +205,15 @@ class ViewController: UIViewController {
             if (UIApplication.shared.applicationState != .active) {
                 conveniencerobot.disconnect()
             } else {
-                self.robot = RKConvenienceRobot(robot: noteRobot);
+                robot = RKConvenienceRobot(robot: noteRobot)
                 connectionLabel.text = noteRobot.name()
+                robot.add(self)
+                robot.enableStabilization(true)
+                robot.enableCollisions(true)
+                robot.enableLocator(true)
+                let sensorMask = RKDataStreamingMask.locatorAll
+                robot.enableSensors(sensorMask, at: RKStreamingRate.dataStreamingRate10)
+                
                 //directionControl()
                 //toggleLED()
             }
