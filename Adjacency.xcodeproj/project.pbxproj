@@ -13,8 +13,8 @@
 		9C8D35A51D9DB87C00C90AEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D35A31D9DB87C00C90AEC /* Main.storyboard */; };
 		9C8D35A71D9DB87C00C90AEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D35A61D9DB87C00C90AEC /* Assets.xcassets */; };
 		9C8D35AA1D9DB87C00C90AEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D35A81D9DB87C00C90AEC /* LaunchScreen.storyboard */; };
-		9C8D35B51D9DB87C00C90AEC /* HelloSpheroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D35B41D9DB87C00C90AEC /* HelloSpheroTests.swift */; };
-		9C8D35C01D9DB87C00C90AEC /* HelloSpheroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D35BF1D9DB87C00C90AEC /* HelloSpheroUITests.swift */; };
+		9C8D35B51D9DB87C00C90AEC /* AdjacencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D35B41D9DB87C00C90AEC /* AdjacencyTests.swift */; };
+		9C8D35C01D9DB87C00C90AEC /* AdjacencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D35BF1D9DB87C00C90AEC /* AdjacencyUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,20 +36,20 @@
 
 /* Begin PBXFileReference section */
 		9C79D9811DB02C0700FAE4DA /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotKit.framework; path = "../../../orbotix-Sphero-iOS-SDK-7b5576c/frameworks/RobotKit.framework"; sourceTree = "<group>"; };
-		9C8663301DA6C1CE001B8DBB /* HelloSphero-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HelloSphero-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C8663301DA6C1CE001B8DBB /* Adjacency-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Adjacency-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C8663311DA6D903001B8DBB /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RobotKit.framework; sourceTree = "<group>"; };
-		9C8D359C1D9DB87C00C90AEC /* HelloSphero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSphero.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C8D359C1D9DB87C00C90AEC /* Adjacency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adjacency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8D359F1D9DB87C00C90AEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C8D35A11D9DB87C00C90AEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9C8D35A41D9DB87C00C90AEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C8D35A61D9DB87C00C90AEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C8D35A91D9DB87C00C90AEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C8D35AB1D9DB87C00C90AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C8D35B01D9DB87C00C90AEC /* HelloSpheroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloSpheroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C8D35B41D9DB87C00C90AEC /* HelloSpheroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSpheroTests.swift; sourceTree = "<group>"; };
+		9C8D35B01D9DB87C00C90AEC /* AdjacencyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdjacencyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C8D35B41D9DB87C00C90AEC /* AdjacencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacencyTests.swift; sourceTree = "<group>"; };
 		9C8D35B61D9DB87C00C90AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C8D35BB1D9DB87C00C90AEC /* HelloSpheroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloSpheroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C8D35BF1D9DB87C00C90AEC /* HelloSpheroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSpheroUITests.swift; sourceTree = "<group>"; };
+		9C8D35BB1D9DB87C00C90AEC /* AdjacencyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdjacencyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C8D35BF1D9DB87C00C90AEC /* AdjacencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacencyUITests.swift; sourceTree = "<group>"; };
 		9C8D35C11D9DB87C00C90AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,9 +91,9 @@
 		9C8D35931D9DB87C00C90AEC = {
 			isa = PBXGroup;
 			children = (
-				9C8D359E1D9DB87C00C90AEC /* HelloSphero */,
-				9C8D35B31D9DB87C00C90AEC /* HelloSpheroTests */,
-				9C8D35BE1D9DB87C00C90AEC /* HelloSpheroUITests */,
+				9C8D359E1D9DB87C00C90AEC /* Adjacency */,
+				9C8D35B31D9DB87C00C90AEC /* AdjacencyTests */,
+				9C8D35BE1D9DB87C00C90AEC /* AdjacencyUITests */,
 				9C8D359D1D9DB87C00C90AEC /* Products */,
 				9C86632D1DA6BF32001B8DBB /* Frameworks */,
 			);
@@ -102,14 +102,14 @@
 		9C8D359D1D9DB87C00C90AEC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9C8D359C1D9DB87C00C90AEC /* HelloSphero.app */,
-				9C8D35B01D9DB87C00C90AEC /* HelloSpheroTests.xctest */,
-				9C8D35BB1D9DB87C00C90AEC /* HelloSpheroUITests.xctest */,
+				9C8D359C1D9DB87C00C90AEC /* Adjacency.app */,
+				9C8D35B01D9DB87C00C90AEC /* AdjacencyTests.xctest */,
+				9C8D35BB1D9DB87C00C90AEC /* AdjacencyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9C8D359E1D9DB87C00C90AEC /* HelloSphero */ = {
+		9C8D359E1D9DB87C00C90AEC /* Adjacency */ = {
 			isa = PBXGroup;
 			children = (
 				9C8D359F1D9DB87C00C90AEC /* AppDelegate.swift */,
@@ -118,35 +118,35 @@
 				9C8D35A61D9DB87C00C90AEC /* Assets.xcassets */,
 				9C8D35A81D9DB87C00C90AEC /* LaunchScreen.storyboard */,
 				9C8D35AB1D9DB87C00C90AEC /* Info.plist */,
-				9C8663301DA6C1CE001B8DBB /* HelloSphero-Bridging-Header.h */,
+				9C8663301DA6C1CE001B8DBB /* Adjacency-Bridging-Header.h */,
 			);
-			path = HelloSphero;
+			path = Adjacency;
 			sourceTree = "<group>";
 		};
-		9C8D35B31D9DB87C00C90AEC /* HelloSpheroTests */ = {
+		9C8D35B31D9DB87C00C90AEC /* AdjacencyTests */ = {
 			isa = PBXGroup;
 			children = (
-				9C8D35B41D9DB87C00C90AEC /* HelloSpheroTests.swift */,
+				9C8D35B41D9DB87C00C90AEC /* AdjacencyTests.swift */,
 				9C8D35B61D9DB87C00C90AEC /* Info.plist */,
 			);
-			path = HelloSpheroTests;
+			path = AdjacencyTests;
 			sourceTree = "<group>";
 		};
-		9C8D35BE1D9DB87C00C90AEC /* HelloSpheroUITests */ = {
+		9C8D35BE1D9DB87C00C90AEC /* AdjacencyUITests */ = {
 			isa = PBXGroup;
 			children = (
-				9C8D35BF1D9DB87C00C90AEC /* HelloSpheroUITests.swift */,
+				9C8D35BF1D9DB87C00C90AEC /* AdjacencyUITests.swift */,
 				9C8D35C11D9DB87C00C90AEC /* Info.plist */,
 			);
-			path = HelloSpheroUITests;
+			path = AdjacencyUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9C8D359B1D9DB87C00C90AEC /* HelloSphero */ = {
+		9C8D359B1D9DB87C00C90AEC /* Adjacency */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C8D35C41D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "HelloSphero" */;
+			buildConfigurationList = 9C8D35C41D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "Adjacency" */;
 			buildPhases = (
 				9C8D35981D9DB87C00C90AEC /* Sources */,
 				9C8D35991D9DB87C00C90AEC /* Frameworks */,
@@ -156,14 +156,14 @@
 			);
 			dependencies = (
 			);
-			name = HelloSphero;
-			productName = HelloSphero;
-			productReference = 9C8D359C1D9DB87C00C90AEC /* HelloSphero.app */;
+			name = Adjacency;
+			productName = Adjacency;
+			productReference = 9C8D359C1D9DB87C00C90AEC /* Adjacency.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9C8D35AF1D9DB87C00C90AEC /* HelloSpheroTests */ = {
+		9C8D35AF1D9DB87C00C90AEC /* AdjacencyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C8D35C71D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "HelloSpheroTests" */;
+			buildConfigurationList = 9C8D35C71D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "AdjacencyTests" */;
 			buildPhases = (
 				9C8D35AC1D9DB87C00C90AEC /* Sources */,
 				9C8D35AD1D9DB87C00C90AEC /* Frameworks */,
@@ -174,14 +174,14 @@
 			dependencies = (
 				9C8D35B21D9DB87C00C90AEC /* PBXTargetDependency */,
 			);
-			name = HelloSpheroTests;
-			productName = HelloSpheroTests;
-			productReference = 9C8D35B01D9DB87C00C90AEC /* HelloSpheroTests.xctest */;
+			name = AdjacencyTests;
+			productName = AdjacencyTests;
+			productReference = 9C8D35B01D9DB87C00C90AEC /* AdjacencyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9C8D35BA1D9DB87C00C90AEC /* HelloSpheroUITests */ = {
+		9C8D35BA1D9DB87C00C90AEC /* AdjacencyUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C8D35CA1D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "HelloSpheroUITests" */;
+			buildConfigurationList = 9C8D35CA1D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "AdjacencyUITests" */;
 			buildPhases = (
 				9C8D35B71D9DB87C00C90AEC /* Sources */,
 				9C8D35B81D9DB87C00C90AEC /* Frameworks */,
@@ -192,9 +192,9 @@
 			dependencies = (
 				9C8D35BD1D9DB87C00C90AEC /* PBXTargetDependency */,
 			);
-			name = HelloSpheroUITests;
-			productName = HelloSpheroUITests;
-			productReference = 9C8D35BB1D9DB87C00C90AEC /* HelloSpheroUITests.xctest */;
+			name = AdjacencyUITests;
+			productName = AdjacencyUITests;
+			productReference = 9C8D35BB1D9DB87C00C90AEC /* AdjacencyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -231,7 +231,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9C8D35971D9DB87C00C90AEC /* Build configuration list for PBXProject "HelloSphero" */;
+			buildConfigurationList = 9C8D35971D9DB87C00C90AEC /* Build configuration list for PBXProject "Adjacency" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -244,9 +244,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9C8D359B1D9DB87C00C90AEC /* HelloSphero */,
-				9C8D35AF1D9DB87C00C90AEC /* HelloSpheroTests */,
-				9C8D35BA1D9DB87C00C90AEC /* HelloSpheroUITests */,
+				9C8D359B1D9DB87C00C90AEC /* Adjacency */,
+				9C8D35AF1D9DB87C00C90AEC /* AdjacencyTests */,
+				9C8D35BA1D9DB87C00C90AEC /* AdjacencyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -292,7 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C8D35B51D9DB87C00C90AEC /* HelloSpheroTests.swift in Sources */,
+				9C8D35B51D9DB87C00C90AEC /* AdjacencyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C8D35C01D9DB87C00C90AEC /* HelloSpheroUITests.swift in Sources */,
+				9C8D35C01D9DB87C00C90AEC /* AdjacencyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,12 +309,12 @@
 /* Begin PBXTargetDependency section */
 		9C8D35B21D9DB87C00C90AEC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9C8D359B1D9DB87C00C90AEC /* HelloSphero */;
+			target = 9C8D359B1D9DB87C00C90AEC /* Adjacency */;
 			targetProxy = 9C8D35B11D9DB87C00C90AEC /* PBXContainerItemProxy */;
 		};
 		9C8D35BD1D9DB87C00C90AEC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9C8D359B1D9DB87C00C90AEC /* HelloSphero */;
+			target = 9C8D359B1D9DB87C00C90AEC /* Adjacency */;
 			targetProxy = 9C8D35BC1D9DB87C00C90AEC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -441,16 +441,16 @@
 					"/Users/Gabrielle/Documents/Columbia/Sem7/SpheroProject/Sphero-iOS-SDK-master/frameworks",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = HelloSphero/Info.plist;
+				INFOPLIST_FILE = Adjacency/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.HelloSphero;
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.Adjacency;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Gabrielle/Documents/Columbia/Sem7/SpheroProject/Sphero-iOS-SDK-master/samples/HelloSphero/HelloSphero/HelloSphero-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Gabrielle/Documents/Columbia/Sem7/SpheroProject/Sphero-iOS-SDK-master/samples/Adjacency/Adjacency/Adjacency-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
@@ -465,16 +465,16 @@
 					"/Users/Gabrielle/Documents/Columbia/Sem7/SpheroProject/Sphero-iOS-SDK-master/frameworks",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = HelloSphero/Info.plist;
+				INFOPLIST_FILE = Adjacency/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.HelloSphero;
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.Adjacency;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Gabrielle/Documents/Columbia/Sem7/SpheroProject/Sphero-iOS-SDK-master/samples/HelloSphero/HelloSphero/HelloSphero-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Gabrielle/Documents/Columbia/Sem7/SpheroProject/Sphero-iOS-SDK-master/samples/Adjacency/Adjacency/Adjacency-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
@@ -486,12 +486,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 654CT3KEZ7;
-				INFOPLIST_FILE = HelloSpheroTests/Info.plist;
+				INFOPLIST_FILE = AdjacencyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.HelloSpheroTests;
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.AdjacencyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelloSphero.app/HelloSphero";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Adjacency.app/Adjacency";
 			};
 			name = Debug;
 		};
@@ -501,12 +501,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 654CT3KEZ7;
-				INFOPLIST_FILE = HelloSpheroTests/Info.plist;
+				INFOPLIST_FILE = AdjacencyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.HelloSpheroTests;
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.AdjacencyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelloSphero.app/HelloSphero";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Adjacency.app/Adjacency";
 			};
 			name = Release;
 		};
@@ -515,12 +515,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 654CT3KEZ7;
-				INFOPLIST_FILE = HelloSpheroUITests/Info.plist;
+				INFOPLIST_FILE = AdjacencyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.HelloSpheroUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.AdjacencyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = HelloSphero;
+				TEST_TARGET_NAME = Adjacency;
 			};
 			name = Debug;
 		};
@@ -529,19 +529,19 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 654CT3KEZ7;
-				INFOPLIST_FILE = HelloSpheroUITests/Info.plist;
+				INFOPLIST_FILE = AdjacencyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.HelloSpheroUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = GabrielleT.AdjacencyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = HelloSphero;
+				TEST_TARGET_NAME = Adjacency;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9C8D35971D9DB87C00C90AEC /* Build configuration list for PBXProject "HelloSphero" */ = {
+		9C8D35971D9DB87C00C90AEC /* Build configuration list for PBXProject "Adjacency" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C8D35C21D9DB87C00C90AEC /* Debug */,
@@ -550,7 +550,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C8D35C41D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "HelloSphero" */ = {
+		9C8D35C41D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "Adjacency" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C8D35C51D9DB87C00C90AEC /* Debug */,
@@ -559,7 +559,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C8D35C71D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "HelloSpheroTests" */ = {
+		9C8D35C71D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "AdjacencyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C8D35C81D9DB87C00C90AEC /* Debug */,
@@ -568,7 +568,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C8D35CA1D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "HelloSpheroUITests" */ = {
+		9C8D35CA1D9DB87C00C90AEC /* Build configuration list for PBXNativeTarget "AdjacencyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C8D35CB1D9DB87C00C90AEC /* Debug */,
