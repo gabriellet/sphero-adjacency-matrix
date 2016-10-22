@@ -47,15 +47,17 @@ class ViewController: UIViewController, RKResponseObserver {
     var locatorPositionY: Float = 0.0
     
     // adjacency matrix of 100x100, will map from (x,y)-coordinates (-50,-50) to (50,50)
+    var arraySize = 100
+    // initialize array below
     var adj: [[Int]] = [[Int]](repeating:[Int](repeating:0, count:100), count:100)
     var adjMapVal: Int = 50
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        // possibly do clean up if open connection exists i.e. from force quit
         startDiscovery()
         RKRobotDiscoveryAgent.shared().addNotificationObserver(self, selector: #selector(handleRobotStateChangeNotification))
-        //RKRobotDiscoveryAgent.shared().addNotificationObserver(self, selector: #selector(handleAsyncMessage))
     }
 
     override func didReceiveMemoryWarning() {
@@ -196,8 +198,13 @@ class ViewController: UIViewController, RKResponseObserver {
             NSLog("Colllision detected: time=\(collisionTime), speed=\(collisionSpeed)")
             let adjPosX = Int(locatorPositionX) + adjMapVal
             let adjPosY = Int(locatorPositionY) + adjMapVal
-            adj[adjPosX][adjPosY] =  1
-            NSLog("adjacency matrix (\(adjPosX),\(adjPosY))=\(adj[adjPosX][adjPosY])")
+            if (adjPosX < arraySize) && (adjPosY < arraySize) {
+                adj[adjPosX][adjPosY] =  1
+                NSLog("adjacency matrix (\(adjPosX),\(adjPosY))=\(adj[adjPosX][adjPosY])")
+            }
+            else {
+                NSLog("position outside currnet adjacency matrix size")
+            }
         }
     }
     
@@ -221,9 +228,6 @@ class ViewController: UIViewController, RKResponseObserver {
                 robot.enableLocator(true)
                 let sensorMask = RKDataStreamingMask.locatorAll
                 robot.enableSensors(sensorMask, at: RKStreamingRate.dataStreamingRate10)
-                
-                //directionControl()
-                //toggleLED()
             }
             break
         case .disconnected:
