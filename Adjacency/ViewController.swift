@@ -48,15 +48,17 @@ class ViewController: UIViewController, RKResponseObserver {
     var locatorPositionY: Float = 0.0
     
     // adjacency matrix of 100x100, will map from (x,y)-coordinates (-50,-50) to (50,50)
-    var arraySize = 100
+    var arraySize = 300
     // initialize array
-    var adj: [[Int]] = [[Int]](repeating:[Int](repeating:0, count:100), count:100)
-    var adjMapVal: Int = 50
+    var adj: [[Int]] = [[Int]](repeating:[Int](repeating:0, count:300), count:300)
+    var adjMapVal: Int = 150
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // possibly do clean up if open connection exists i.e. from force quit
+        //RKRobotDiscoveryAgent.disconnectAll()
+        //stopDiscovery()
         startDiscovery()
         RKRobotDiscoveryAgent.shared().addNotificationObserver(self, selector: #selector(handleRobotStateChangeNotification))
     }
@@ -176,7 +178,7 @@ class ViewController: UIViewController, RKResponseObserver {
     }
     
     func handle(_ message: RKAsyncMessage!, forRobot robot: RKRobotBase!) {
-        NSLog("Async Message")
+        //NSLog("Async Message")
         if let sensorMessage = message as? RKDeviceSensorsAsyncData {
             let sensorData = sensorMessage.dataFrames.last as? RKDeviceSensorsData
             let locator = sensorData?.locatorData
@@ -206,13 +208,22 @@ class ViewController: UIViewController, RKResponseObserver {
             //translate to array indices, add if within boundaries
             let adjPosX = Int(locatorPositionX) + adjMapVal
             let adjPosY = Int(locatorPositionY) + adjMapVal
-            if (adjPosX < arraySize) && (adjPosY < arraySize) {
+            let withinXBound = (adjPosX >= 0) && (adjPosX < arraySize)
+            let withinYBound = (adjPosY >= 0) && (adjPosY < arraySize)
+            if (withinXBound  && withinYBound) {
                 adj[adjPosX][adjPosY] =  1
                 NSLog("adj[\(adjPosX)][\(adjPosY)]=\(adj[adjPosX][adjPosY])")
             }
             else {
                 NSLog("position outside currnet adjacency matrix size")
             }
+            /* for i in 0...(arraySize-1) {
+                var row = ""
+                for j in 0...(arraySize-1) {
+                    row += "\(adj[i][j]) "
+                }
+                NSLog("\(row)")
+            } */
         }
     }
     
