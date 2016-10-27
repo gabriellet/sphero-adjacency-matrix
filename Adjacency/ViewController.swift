@@ -16,7 +16,8 @@ class ViewController: UIViewController, RKResponseObserver {
     @IBOutlet weak var step6: UILabel!
     @IBOutlet weak var step7: UILabel!
     @IBOutlet weak var step8: UILabel!
-    @IBOutlet var connectionLabel: UILabel!
+    @IBOutlet weak var connectionLabel: UILabel!
+    @IBOutlet weak var positionLabel: UILabel!
     
     var ledON = false
     
@@ -48,7 +49,7 @@ class ViewController: UIViewController, RKResponseObserver {
     
     // adjacency matrix of 100x100, will map from (x,y)-coordinates (-50,-50) to (50,50)
     var arraySize = 100
-    // initialize array below
+    // initialize array
     var adj: [[Int]] = [[Int]](repeating:[Int](repeating:0, count:100), count:100)
     var adjMapVal: Int = 50
     
@@ -88,7 +89,6 @@ class ViewController: UIViewController, RKResponseObserver {
                 directionControl(dir: .backward)
             default: responseText.text = "-----"
         }
-        //responseText.text = "Greetings mortals."
         
     }
 
@@ -150,7 +150,7 @@ class ViewController: UIViewController, RKResponseObserver {
     }
     
     func directionControl(dir: DriveDir) {
-        NSLog("I believe I can drive")
+        //NSLog("I believe I can drive")
         switch dir {
         case .left: hdg = 270.0
             dst = Float(leftStep)
@@ -167,14 +167,11 @@ class ViewController: UIViewController, RKResponseObserver {
     func drive() {
         if let robot = self.robot {
             robot.setLEDWithRed(0.7, green: 0.0, blue: 0.2)
-            NSLog("heading: \(hdg), distance: \(dst)")
-            //DispatchQueue.main.asyncAfter(deadline: .now()) {
-                //robot.send(RKRollCommand(heading: self.hdg, velocity: 1.0, andDistance: self.dst))
-            //}
+            //NSLog("heading: \(hdg), distance: \(dst)")
             robot.drive(withHeading: hdg, andVelocity: dst)
             //self.robot.send(RKSetHeadingCommand(heading: 0.0))
             //self.robot.send(RKRollCommand(heading: hdg, velocity: 1.0, andDistance: dst))
-            NSLog("One small step for Gabrielle, one large roll for me.")
+            //NSLog("One small step for Gabrielle, one large roll for me.")
         }
     }
     
@@ -185,22 +182,33 @@ class ViewController: UIViewController, RKResponseObserver {
             let locator = sensorData?.locatorData
             locatorPositionX = locator!.position.x
             locatorPositionY = locator!.position.y
-            NSLog("Current Position:(\(locatorPositionX), \(locatorPositionY))")
+            positionLabel.text = "(\(locatorPositionX), \(locatorPositionY))"
+            //NSLog("Current Position:(\(locatorPositionX), \(locatorPositionY))")
             
         }
         else if let sensorMessage = message as? RKCollisionDetectedAsyncData {
+            
+            //get data from sphero on collision
             collisionTime = sensorMessage.impactTimeStamp
             collisionSpeed = sensorMessage.impactSpeed
             collisionAxisX = sensorMessage.impactAxis.x
             collisionAxisY = sensorMessage.impactAxis.y
+            
+            //change sphero color on collision, print message to app
             self.robot.setLEDWithRed(0.1, green: 0.8, blue: 0.2)
+            responseText.text = "OUCH!"
+            
+            //stop driving
             self.robot.stop()
             NSLog("Colllision detected: time=\(collisionTime), speed=\(collisionSpeed)")
+            NSLog("Current Position:(\(locatorPositionX), \(locatorPositionY))")
+            
+            //translate to array indices, add if within boundaries
             let adjPosX = Int(locatorPositionX) + adjMapVal
             let adjPosY = Int(locatorPositionY) + adjMapVal
             if (adjPosX < arraySize) && (adjPosY < arraySize) {
                 adj[adjPosX][adjPosY] =  1
-                NSLog("adjacency matrix (\(adjPosX),\(adjPosY))=\(adj[adjPosX][adjPosY])")
+                NSLog("adj[\(adjPosX)][\(adjPosY)]=\(adj[adjPosX][adjPosY])")
             }
             else {
                 NSLog("position outside currnet adjacency matrix size")
@@ -222,12 +230,14 @@ class ViewController: UIViewController, RKResponseObserver {
             } else {
                 robot = RKConvenienceRobot(robot: noteRobot)
                 connectionLabel.text = noteRobot.name()
-                robot.add(self)
+                responseText.text = "Greetings mortals."
+                robot.add(self) //get responses from sphero
                 robot.enableStabilization(true)
                 robot.enableCollisions(true)
                 robot.enableLocator(true)
                 let sensorMask = RKDataStreamingMask.locatorAll
                 robot.enableSensors(sensorMask, at: RKStreamingRate.dataStreamingRate10)
+                robot.setZeroHeading() //current position is (0,0)
             }
             break
         case .disconnected:
