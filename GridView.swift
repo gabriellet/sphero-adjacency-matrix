@@ -61,19 +61,27 @@ class GridView: UIView {
         }
         context.strokePath()
         
-        // translate occupancy grid to matrix of values to print (scale grid down by 0.5)
-        var filled = [[Bool]](repeating:[Bool](repeating:false, count:12), count:12)
-        var iPos = 0
-        var jPos = 0
-        for a in stride(from: 0, through: occupancy.count-2, by: 2) {
-            for b in stride(from: 0, through: occupancy[a].count-2, by: 2) {
-                if (occupancy[a][b] == 1) || (occupancy[a+1][b] == 1) || (occupancy[a][b+1] == 1) || (occupancy[a+1][b+1] == 1) {
-                    filled[a/2][b/2] = true
+        // translate occupancy grid to matrix of values to print (scale grid down for constant size matrix)
+        // number of cells in display
+        let cells = 20
+        // use for looping to check if any cell in range is occupied
+        let scaleFactor = occupancy.count / cells
+        // initialize array
+        var filled = [[Bool]](repeating:[Bool](repeating:false, count:cells), count:cells)
+        
+        for a in stride(from: 0, through: occupancy.count-scaleFactor, by: scaleFactor) {
+            for b in stride(from: 0, through: occupancy[a].count-scaleFactor, by: scaleFactor) {
+                if checkValues(oFrom: a, oTo: a+scaleFactor, iFrom: b, iTo: b+scaleFactor) == true {
+                    let aIndex = a/scaleFactor
+                    let bIndex = b/scaleFactor
+                    filled[aIndex][bIndex] = true
                 }
             }
         }
         
         // fill in appropriate squares
+        var iPos = 0
+        var jPos = 0
         for i in stride(from: xOffset, to: rect.size.height - xOffset, by: step) {
             
             for j in stride(from: yOffset, to: rect.size.width - yOffset, by: step) {
@@ -96,6 +104,18 @@ class GridView: UIView {
         context.fillPath()
         
     }
+    
+    func checkValues(oFrom: Int, oTo: Int, iFrom: Int, iTo: Int)-> Bool {
+        for c in oFrom..<oTo {
+            for d in iFrom..<iTo {
+                if occupancy[c][d] == 1 {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+
     
 }
 

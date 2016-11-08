@@ -12,12 +12,9 @@ class ViewController: UIViewController, RKResponseObserver {
 
     //MARK: Properties
     @IBOutlet weak var responseText: UILabel!
-    @IBOutlet weak var step5: UILabel!
-    @IBOutlet weak var step6: UILabel!
-    @IBOutlet weak var step7: UILabel!
-    @IBOutlet weak var step8: UILabel!
     @IBOutlet weak var connectionLabel: UILabel!
     @IBOutlet weak var positionLabel: UILabel!
+    @IBOutlet weak var speedLabel: UILabel!
     
     var ledON = false
     
@@ -25,6 +22,7 @@ class ViewController: UIViewController, RKResponseObserver {
     var rightStep: Double = 0.0
     var forwardStep: Double = 0.0
     var backwardStep: Double = 0.0
+    var speed: Double = 0.0
     
     var robot: RKConvenienceRobot!
     var robotBase: RKRobotBase!
@@ -33,10 +31,10 @@ class ViewController: UIViewController, RKResponseObserver {
     var dst: Float = 0.0
     
     enum DriveDir {
-        case left
-        case right
-        case forward
-        case backward
+        case West
+        case East
+        case North
+        case South
     }
     
     var collisionTime: TimeInterval = TimeInterval(0.0)
@@ -47,7 +45,7 @@ class ViewController: UIViewController, RKResponseObserver {
     var locatorPositionX: Float = 0.0
     var locatorPositionY: Float = 0.0
     
-    // adjacency matrix of 100x100, will map from (x,y)-coordinates (-50,-50) to (50,50)
+    // adjacency matrix of 100x100, will map from (x,y)-coordinates (-150,-150) to (150,150)
     var arraySize = 300
     // initialize array
     var adj: [[Int]] = [[Int]](repeating:[Int](repeating:0, count:300), count:300)
@@ -81,37 +79,22 @@ class ViewController: UIViewController, RKResponseObserver {
     @IBAction func buttonPress(_ sender: UIButton) {
         switch (sender.tag) {
             case 0:
-                responseText.text = "Drive left \(leftStep)"
-                directionControl(dir: .left)
-            case 1: responseText.text = "Drive right \(rightStep)"
-                directionControl(dir: .right)
-            case 2: responseText.text = "Drive forward \(forwardStep)"
-                directionControl(dir: .forward)
-            case 3: responseText.text = "Drive backward \(backwardStep)"
-                directionControl(dir: .backward)
+                responseText.text = "Drive West"
+                directionControl(dir: .West)
+            case 1: responseText.text = "Drive East"
+                directionControl(dir: .East)
+            case 2: responseText.text = "Drive North"
+                directionControl(dir: .North)
+            case 3: responseText.text = "Drive South"
+                directionControl(dir: .South)
             default: responseText.text = "-----"
         }
         
     }
-
-    @IBAction func sayHello(_ sender: UIButton) {
-        responseText.text = "Hello World!"
-        //toggleLED()
-        rainbowLED()
-    }
     
     @IBAction func stepperPress(_ sender: UIStepper) {
-        switch (sender.tag) {
-        case 5: step5.text = String(sender.value)
-            leftStep = sender.value
-        case 6: step6.text = String(sender.value)
-            rightStep = sender.value
-        case 7: step7.text = String(sender.value)
-            forwardStep = sender.value
-        case 8: step8.text = String(sender.value)
-            backwardStep = sender.value
-        default: break
-        }
+        speedLabel.text = String(sender.value)
+        speed = sender.value
     }
     
     //MARK: - Robot Specific Functions
@@ -154,15 +137,12 @@ class ViewController: UIViewController, RKResponseObserver {
     func directionControl(dir: DriveDir) {
         //NSLog("I believe I can drive")
         switch dir {
-        case .left: hdg = 270.0
-            dst = Float(leftStep)
-        case .right: hdg = 90.0
-            dst = Float(rightStep)
-        case .backward: hdg = 180.0
-            dst = Float(backwardStep)
-        case .forward: hdg = 0.0
-            dst = Float(forwardStep)
+            case .West: hdg = 270.0
+            case .East: hdg = 90.0
+            case .North: hdg = 180.0
+            case .South: hdg = 0.0
         }
+        dst = Float(speed)
         drive()
     }
     
