@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C5E77C41DD260F4002FC53B /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5E77C31DD260F4002FC53B /* GridView.swift */; };
 		9C79D9821DB02C0700FAE4DA /* RobotKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C79D9811DB02C0700FAE4DA /* RobotKit.framework */; };
 		9C8D35A01D9DB87C00C90AEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D359F1D9DB87C00C90AEC /* AppDelegate.swift */; };
 		9C8D35A21D9DB87C00C90AEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D35A11D9DB87C00C90AEC /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C5E77C31DD260F4002FC53B /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		9C79D9811DB02C0700FAE4DA /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RobotKit.framework; path = "../../../orbotix-Sphero-iOS-SDK-7b5576c/frameworks/RobotKit.framework"; sourceTree = "<group>"; };
 		9C8663301DA6C1CE001B8DBB /* Adjacency-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Adjacency-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C8663311DA6D903001B8DBB /* RobotKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RobotKit.framework; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		9C8D35931D9DB87C00C90AEC = {
 			isa = PBXGroup;
 			children = (
+				9C5E77C31DD260F4002FC53B /* GridView.swift */,
 				9C8D359E1D9DB87C00C90AEC /* Adjacency */,
 				9C8D35B31D9DB87C00C90AEC /* AdjacencyTests */,
 				9C8D35BE1D9DB87C00C90AEC /* AdjacencyUITests */,
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C8D35A21D9DB87C00C90AEC /* ViewController.swift in Sources */,
+				9C5E77C41DD260F4002FC53B /* GridView.swift in Sources */,
 				9C8D35A01D9DB87C00C90AEC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
