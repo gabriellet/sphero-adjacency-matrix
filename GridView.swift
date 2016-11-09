@@ -61,14 +61,11 @@ class GridView: UIView {
         }
         context.strokePath()
         
-        // translate occupancy grid to matrix of values to print (scale grid down for constant size matrix)
-        // number of cells in display
-        let cells = 20
-        // use for looping to check if any cell in range is occupied
+        // translate occupancy grid to matrix of values to print
+        // (scale matrix down to grid size)
+        let cells = 12
         let scaleFactor = occupancy.count / cells
-        // initialize array
         var filled = [[Bool]](repeating:[Bool](repeating:false, count:cells), count:cells)
-        
         for a in stride(from: 0, through: occupancy.count-scaleFactor, by: scaleFactor) {
             for b in stride(from: 0, through: occupancy[a].count-scaleFactor, by: scaleFactor) {
                 if checkValues(oFrom: a, oTo: a+scaleFactor, iFrom: b, iTo: b+scaleFactor) == true {
@@ -115,7 +112,6 @@ class GridView: UIView {
         }
         return false
     }
-
     
 }
 

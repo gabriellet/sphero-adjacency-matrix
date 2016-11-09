@@ -16,12 +16,10 @@ class ViewController: UIViewController, RKResponseObserver {
     @IBOutlet weak var positionLabel: UILabel!
     @IBOutlet weak var speedLabel: UILabel!
     
-    var ledON = false
+    @IBOutlet weak var gridView: GridView!
     
-    var leftStep: Double = 0.0
-    var rightStep: Double = 0.0
-    var forwardStep: Double = 0.0
-    var backwardStep: Double = 0.0
+    var ledON = false
+
     var speed: Double = 0.0
     
     var robot: RKConvenienceRobot!
@@ -31,10 +29,14 @@ class ViewController: UIViewController, RKResponseObserver {
     var dst: Float = 0.0
     
     enum DriveDir {
-        case West
-        case East
         case North
+        case NorthEast
+        case East
+        case SouthEast
         case South
+        case SouthWest
+        case West
+        case NorthWest
     }
     
     var collisionTime: TimeInterval = TimeInterval(0.0)
@@ -46,10 +48,8 @@ class ViewController: UIViewController, RKResponseObserver {
     var locatorPositionY: Float = 0.0
     
     // adjacency matrix of 100x100, will map from (x,y)-coordinates (-150,-150) to (150,150)
-    var arraySize = 300
-    // initialize array
-    var adj: [[Int]] = [[Int]](repeating:[Int](repeating:0, count:300), count:300)
-    var adjMapVal: Int = 150
+    var arraySize = 1000
+    var adjMapVal: Int = 1000 / 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,11 +60,19 @@ class ViewController: UIViewController, RKResponseObserver {
         startDiscovery()
         RKRobotDiscoveryAgent.shared().addNotificationObserver(self, selector: #selector(handleRobotStateChangeNotification))
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        RKRobotDiscoveryAgent.disconnectAll()
+        stopDiscovery()
+        startDiscovery()
+        RKRobotDiscoveryAgent.shared().addNotificationObserver(self, selector: #selector(handleRobotStateChangeNotification))
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
     //MARK: Actions
     
@@ -78,19 +86,62 @@ class ViewController: UIViewController, RKResponseObserver {
 
     @IBAction func buttonPress(_ sender: UIButton) {
         switch (sender.tag) {
-            case 0:
-                responseText.text = "Drive West"
-                directionControl(dir: .West)
-            case 1: responseText.text = "Drive East"
-                directionControl(dir: .East)
-            case 2: responseText.text = "Drive North"
+            case 0: responseText.text = "Drive North"
                 directionControl(dir: .North)
-            case 3: responseText.text = "Drive South"
+            case 1: responseText.text = "Drive North East"
+                directionControl(dir: .NorthEast)
+            case 2: responseText.text = "Drive East"
+                directionControl(dir: .East)
+            case 3: responseText.text = "Drive South East"
+                directionControl(dir: .SouthEast)
+            case 4: responseText.text = "Drive South"
                 directionControl(dir: .South)
+            case 5: responseText.text = "Drive South West"
+                directionControl(dir: .SouthWest)
+            case 6: responseText.text = "Drive West"
+                directionControl(dir: .West)
+            case 7: responseText.text = "Drive North West"
+                directionControl(dir: .NorthWest)
             default: responseText.text = "-----"
         }
         
     }
+    
+    // TODO: make press and hold action work
+    /*
+    var timer: Timer = Timer.init()
+    
+    func driveButtonHold() {
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(driveButtonHold), userInfo: nil, repeats: true)
+    }
+    
+    func driveButtonStop() {
+        
+    }
+    
+    @IBAction func buttonHold(_ sender: UIButton) {
+        switch (sender.tag) {
+        case 0: responseText.text = "Drive North"
+        directionControl(dir: .North)
+        case 1: responseText.text = "Drive North East"
+        directionControl(dir: .NorthEast)
+        case 2: responseText.text = "Drive East"
+        directionControl(dir: .East)
+        case 3: responseText.text = "Drive South East"
+        directionControl(dir: .SouthEast)
+        case 4: responseText.text = "Drive South"
+        directionControl(dir: .South)
+        case 5: responseText.text = "Drive South West"
+        directionControl(dir: .SouthWest)
+        case 6: responseText.text = "Drive West"
+        directionControl(dir: .West)
+        case 7: responseText.text = "Drive North West"
+        directionControl(dir: .NorthWest)
+        default: responseText.text = "-----"
+        }
+    } */
+    
+    
     
     @IBAction func stepperPress(_ sender: UIStepper) {
         speedLabel.text = String(sender.value)
@@ -106,18 +157,6 @@ class ViewController: UIViewController, RKResponseObserver {
     
     func stopDiscovery() {
         RKRobotDiscoveryAgent.stopDiscovery()
-    }
-    
-    func rainbowLED() {
-        if let robot = self.robot {
-            NSLog("Hello world!")
-            robot.setLEDWithRed(0.0, green: 0.0, blue: 0.0)
-            robot.setLEDWithRed(0.5, green: 0.0, blue: 0.0)
-            robot.setLEDWithRed(0.0, green: 0.0, blue: 0.0)
-            robot.setLEDWithRed(0.0, green: 0.5, blue: 0.0)
-            robot.setLEDWithRed(0.0, green: 0.0, blue: 0.0)
-            robot.setLEDWithRed(0.0, green: 0.0, blue: 0.5)
-        }
     }
     
     func toggleLED() {
@@ -137,10 +176,14 @@ class ViewController: UIViewController, RKResponseObserver {
     func directionControl(dir: DriveDir) {
         //NSLog("I believe I can drive")
         switch dir {
-            case .West: hdg = 270.0
+            case .North: hdg = 0.0
+            case .NorthEast: hdg = 45.0
             case .East: hdg = 90.0
-            case .North: hdg = 180.0
-            case .South: hdg = 0.0
+            case .SouthEast: hdg = 135.0
+            case .South: hdg = 180.0
+            case .SouthWest: hdg = 225.0
+            case .West: hdg = 270.0
+            case .NorthWest: hdg = 315.0
         }
         dst = Float(speed)
         drive()
@@ -179,6 +222,7 @@ class ViewController: UIViewController, RKResponseObserver {
             //change sphero color on collision, print message to app
             self.robot.setLEDWithRed(0.1, green: 0.8, blue: 0.2)
             responseText.text = "OUCH!"
+            gridView.setNeedsDisplay()
             
             //stop driving
             self.robot.stop()
@@ -191,19 +235,12 @@ class ViewController: UIViewController, RKResponseObserver {
             let withinXBound = (adjPosX >= 0) && (adjPosX < arraySize)
             let withinYBound = (adjPosY >= 0) && (adjPosY < arraySize)
             if (withinXBound  && withinYBound) {
-                adj[adjPosX][adjPosY] =  1
-                NSLog("adj[\(adjPosX)][\(adjPosY)]=\(adj[adjPosX][adjPosY])")
+                occupancy[adjPosX][adjPosY] =  1
+                NSLog("occupancy[\(adjPosX)][\(adjPosY)]=\(occupancy[adjPosX][adjPosY])")
             }
             else {
                 NSLog("position outside current adjacency matrix size")
             }
-            /* for i in 0...(arraySize-1) {
-                var row = ""
-                for j in 0...(arraySize-1) {
-                    row += "\(adj[i][j]) "
-                }
-                NSLog("\(row)")
-            } */
         }
     }
     
@@ -244,31 +281,5 @@ class ViewController: UIViewController, RKResponseObserver {
    
 }
 
-// Occupancy grid, values currently hard coded
-let occupancy = [
-    [0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1],
-    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-]
+var occupancy: [[Int]] = [[Int]](repeating:[Int](repeating:0, count:1000), count:1000)
 

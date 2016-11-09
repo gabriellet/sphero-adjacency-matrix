@@ -14,8 +14,6 @@
 		9C8D35A51D9DB87C00C90AEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D35A31D9DB87C00C90AEC /* Main.storyboard */; };
 		9C8D35A71D9DB87C00C90AEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D35A61D9DB87C00C90AEC /* Assets.xcassets */; };
 		9C8D35AA1D9DB87C00C90AEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D35A81D9DB87C00C90AEC /* LaunchScreen.storyboard */; };
-		9C8D35B51D9DB87C00C90AEC /* AdjacencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D35B41D9DB87C00C90AEC /* AdjacencyTests.swift */; };
-		9C8D35C01D9DB87C00C90AEC /* AdjacencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D35BF1D9DB87C00C90AEC /* AdjacencyUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,11 +46,7 @@
 		9C8D35A91D9DB87C00C90AEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C8D35AB1D9DB87C00C90AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C8D35B01D9DB87C00C90AEC /* AdjacencyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdjacencyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C8D35B41D9DB87C00C90AEC /* AdjacencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacencyTests.swift; sourceTree = "<group>"; };
-		9C8D35B61D9DB87C00C90AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C8D35BB1D9DB87C00C90AEC /* AdjacencyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdjacencyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C8D35BF1D9DB87C00C90AEC /* AdjacencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjacencyUITests.swift; sourceTree = "<group>"; };
-		9C8D35C11D9DB87C00C90AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +89,6 @@
 			children = (
 				9C5E77C31DD260F4002FC53B /* GridView.swift */,
 				9C8D359E1D9DB87C00C90AEC /* Adjacency */,
-				9C8D35B31D9DB87C00C90AEC /* AdjacencyTests */,
-				9C8D35BE1D9DB87C00C90AEC /* AdjacencyUITests */,
 				9C8D359D1D9DB87C00C90AEC /* Products */,
 				9C86632D1DA6BF32001B8DBB /* Frameworks */,
 			);
@@ -124,24 +116,6 @@
 				9C8663301DA6C1CE001B8DBB /* Adjacency-Bridging-Header.h */,
 			);
 			path = Adjacency;
-			sourceTree = "<group>";
-		};
-		9C8D35B31D9DB87C00C90AEC /* AdjacencyTests */ = {
-			isa = PBXGroup;
-			children = (
-				9C8D35B41D9DB87C00C90AEC /* AdjacencyTests.swift */,
-				9C8D35B61D9DB87C00C90AEC /* Info.plist */,
-			);
-			path = AdjacencyTests;
-			sourceTree = "<group>";
-		};
-		9C8D35BE1D9DB87C00C90AEC /* AdjacencyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9C8D35BF1D9DB87C00C90AEC /* AdjacencyUITests.swift */,
-				9C8D35C11D9DB87C00C90AEC /* Info.plist */,
-			);
-			path = AdjacencyUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +270,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C8D35B51D9DB87C00C90AEC /* AdjacencyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +277,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C8D35C01D9DB87C00C90AEC /* AdjacencyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
