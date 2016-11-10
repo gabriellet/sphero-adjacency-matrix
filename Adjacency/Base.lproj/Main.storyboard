@@ -33,7 +33,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bqk-j5-YVb"/>
+                                    <action selector="driveButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="Nik-fG-L61"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eIH-ro-pXa"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="zdD-0y-oif"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlQ-MN-gdi">
@@ -48,7 +50,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nMC-io-9d0"/>
+                                    <action selector="driveButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="VQw-lN-WID"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="Rhb-Ax-Sdy"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qex-Md-jLZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTk-VE-uap">
@@ -63,7 +67,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZNa-Kf-PIJ"/>
+                                    <action selector="driveButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="zB4-Pm-3aF"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HDx-6Y-L9q"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="UFb-ng-jVN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iqs-B9-8Wx">
@@ -78,7 +84,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mxr-4l-fHE"/>
+                                    <action selector="driveButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="dTS-6u-bxR"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bYj-42-DQS"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="lZd-n4-bGj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTg-sb-5US">
@@ -93,7 +101,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7ej-Gv-3UO"/>
+                                    <action selector="driveButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="Njh-mJ-2Xt"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Myr-Pl-4JX"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="dCZ-dU-6za"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMC-ke-1UN">
@@ -108,21 +118,17 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tFm-z3-THS"/>
+                                    <action selector="driveButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="SHs-ef-Hhq"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nLQ-sO-gMe"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="qjl-9b-KVA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdW-To-jNS" userLabel="Speed Label">
-                                <rect key="frame" x="278" y="459" width="50" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdW-To-jNS" userLabel="Speed Label">
+                                <rect key="frame" x="249" y="456" width="54" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" stepValue="0.050000000000000003" translatesAutoresizingMaskIntoConstraints="NO" id="2Qd-95-UoR" userLabel="SpeedStepper">
-                                <rect key="frame" x="256" y="494" width="94" height="29"/>
-                                <connections>
-                                    <action selector="stepperPress:" destination="BYZ-38-t0r" eventType="valueChanged" id="yKq-2a-60C"/>
-                                </connections>
-                            </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Oh-Xa-lrC" userLabel="Position Label">
                                 <rect key="frame" x="103" y="412" width="66" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -130,7 +136,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cW5-Lk-cOA" userLabel="Speed">
-                                <rect key="frame" x="277" y="537" width="47" height="21"/>
+                                <rect key="frame" x="306" y="456" width="47" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="RCu-lo-IDx"/>
                                 </constraints>
@@ -152,6 +158,22 @@
                                 </state>
                                 <connections>
                                     <action selector="sleepButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O2g-EN-Phx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWV-d8-vc6">
+                                <rect key="frame" x="254" y="544" width="94" height="43"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="hMW-d5-NaC"/>
+                                    <constraint firstAttribute="width" constant="94" id="q5h-k6-Hwu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Show Tail">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="showTail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="me3-Ny-0NK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y00-EW-z3i">
@@ -197,7 +219,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bFZ-Fc-57w"/>
+                                    <action selector="driveButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="fZP-k8-4mw"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6jL-X0-nzp"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="F0H-lL-6YM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdB-Tp-Cep">
@@ -212,9 +236,17 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qjf-Jm-Mce"/>
+                                    <action selector="driveButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="ON8-Oo-gfF"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Uj-ta-bQx"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="S7r-X0-neb"/>
                                 </connections>
                             </button>
+                            <stepper opaque="NO" tag="8" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" stepValue="0.050000000000000003" translatesAutoresizingMaskIntoConstraints="NO" id="2Qd-95-UoR" userLabel="SpeedStepper">
+                                <rect key="frame" x="254" y="487" width="94" height="29"/>
+                                <connections>
+                                    <action selector="stepperPress:" destination="BYZ-38-t0r" eventType="valueChanged" id="yKq-2a-60C"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -222,37 +254,39 @@
                             <constraint firstItem="9WD-cK-ZIC" firstAttribute="bottom" secondItem="wTg-sb-5US" secondAttribute="bottom" constant="-3" id="1c3-ql-q4A"/>
                             <constraint firstItem="wuI-2a-LIJ" firstAttribute="top" secondItem="t15-EW-jqB" secondAttribute="bottom" constant="6" id="1jd-ph-yNx"/>
                             <constraint firstItem="YlQ-MN-gdi" firstAttribute="baseline" secondItem="nlM-AF-uwP" secondAttribute="baseline" id="2vM-PA-JOi"/>
+                            <constraint firstItem="9WD-cK-ZIC" firstAttribute="top" secondItem="iWV-d8-vc6" secondAttribute="bottom" constant="17" id="45c-2B-9BP"/>
                             <constraint firstItem="dMC-ke-1UN" firstAttribute="baseline" secondItem="Iqs-B9-8Wx" secondAttribute="baseline" id="49Z-sI-NDi"/>
                             <constraint firstItem="LTk-VE-uap" firstAttribute="baseline" secondItem="iaW-lS-LT9" secondAttribute="baseline" id="4nS-gD-a0S"/>
                             <constraint firstItem="LTk-VE-uap" firstAttribute="leading" secondItem="YlQ-MN-gdi" secondAttribute="leading" id="6Vs-Ir-5p9"/>
-                            <constraint firstItem="cW5-Lk-cOA" firstAttribute="top" secondItem="2Qd-95-UoR" secondAttribute="bottom" constant="14" id="Bcm-w2-Gxq"/>
+                            <constraint firstItem="cW5-Lk-cOA" firstAttribute="top" secondItem="2Qd-95-UoR" secondAttribute="bottom" constant="-60" id="Bcm-w2-Gxq"/>
                             <constraint firstItem="LTk-VE-uap" firstAttribute="baseline" secondItem="wTg-sb-5US" secondAttribute="baseline" id="BnR-Q3-a8C"/>
                             <constraint firstItem="wTg-sb-5US" firstAttribute="leading" secondItem="nlM-AF-uwP" secondAttribute="leading" id="DQE-5o-zm1"/>
                             <constraint firstItem="7Oh-Xa-lrC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="87" id="Koz-VU-iiQ"/>
-                            <constraint firstItem="9WD-cK-ZIC" firstAttribute="top" secondItem="cW5-Lk-cOA" secondAttribute="bottom" constant="46" id="NC0-VX-8pq"/>
+                            <constraint firstItem="9WD-cK-ZIC" firstAttribute="top" secondItem="cW5-Lk-cOA" secondAttribute="bottom" constant="127" id="NC0-VX-8pq"/>
                             <constraint firstItem="LTk-VE-uap" firstAttribute="leading" secondItem="Iqs-B9-8Wx" secondAttribute="leading" id="NGi-gL-7zl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cW5-Lk-cOA" secondAttribute="trailing" constant="35" id="NYf-N5-wEv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cW5-Lk-cOA" secondAttribute="trailing" constant="6" id="NYf-N5-wEv"/>
                             <constraint firstItem="1lN-IV-iTv" firstAttribute="leading" secondItem="7Oh-Xa-lrC" secondAttribute="trailing" constant="11" id="ORW-50-JPg"/>
+                            <constraint firstItem="iWV-d8-vc6" firstAttribute="centerX" secondItem="2Qd-95-UoR" secondAttribute="centerX" id="PnN-0L-K7T"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9WD-cK-ZIC" secondAttribute="trailing" constant="19" id="QaC-pa-lDb"/>
                             <constraint firstItem="dMC-ke-1UN" firstAttribute="top" secondItem="MdB-Tp-Cep" secondAttribute="bottom" constant="8" symbolic="YES" id="Uxj-D3-azD"/>
                             <constraint firstItem="dMC-ke-1UN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="Vxx-iV-rdc"/>
-                            <constraint firstItem="9WD-cK-ZIC" firstAttribute="centerX" secondItem="HdW-To-jNS" secondAttribute="centerX" constant="-1.25" id="XIc-8F-bIH"/>
+                            <constraint firstItem="9WD-cK-ZIC" firstAttribute="centerX" secondItem="HdW-To-jNS" secondAttribute="centerX" constant="25.5" id="XIc-8F-bIH"/>
                             <constraint firstItem="wuI-2a-LIJ" firstAttribute="centerX" secondItem="t15-EW-jqB" secondAttribute="centerX" id="ZB0-5W-9ub"/>
                             <constraint firstItem="wuI-2a-LIJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ecL-8C-paN"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dMC-ke-1UN" secondAttribute="bottom" constant="84" id="fxO-a6-B2b"/>
                             <constraint firstItem="wTg-sb-5US" firstAttribute="top" secondItem="nlM-AF-uwP" secondAttribute="bottom" constant="74" id="gBt-Vs-HMh"/>
                             <constraint firstItem="wuI-2a-LIJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="67" id="h8R-cl-TfE"/>
-                            <constraint firstItem="2Qd-95-UoR" firstAttribute="top" secondItem="HdW-To-jNS" secondAttribute="bottom" constant="14" id="iUn-m8-uBy"/>
+                            <constraint firstItem="2Qd-95-UoR" firstAttribute="top" secondItem="HdW-To-jNS" secondAttribute="bottom" constant="10" id="iUn-m8-uBy"/>
                             <constraint firstItem="wuI-2a-LIJ" firstAttribute="centerX" secondItem="Y00-EW-z3i" secondAttribute="centerX" constant="-1.5" id="ioM-iH-qEa"/>
                             <constraint firstItem="wTg-sb-5US" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="77" id="k6w-B2-OTD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9WD-cK-ZIC" secondAttribute="bottom" constant="20" id="l9G-WD-7lM"/>
-                            <constraint firstItem="9WD-cK-ZIC" firstAttribute="centerX" secondItem="2Qd-95-UoR" secondAttribute="centerX" constant="-1" id="mis-KI-3jX"/>
+                            <constraint firstItem="9WD-cK-ZIC" firstAttribute="centerX" secondItem="2Qd-95-UoR" secondAttribute="centerX" constant="0.5" id="mis-KI-3jX"/>
                             <constraint firstItem="iaW-lS-LT9" firstAttribute="leading" secondItem="dMC-ke-1UN" secondAttribute="leading" id="nZF-8m-jgW"/>
                             <constraint firstItem="Iqs-B9-8Wx" firstAttribute="leading" secondItem="dMC-ke-1UN" secondAttribute="trailing" constant="74" id="s5o-2V-1lR"/>
                             <constraint firstItem="1lN-IV-iTv" firstAttribute="top" secondItem="wuI-2a-LIJ" secondAttribute="bottom" constant="8" symbolic="YES" id="vN1-aC-12M"/>
                             <constraint firstItem="7Oh-Xa-lrC" firstAttribute="top" secondItem="wuI-2a-LIJ" secondAttribute="bottom" constant="8" symbolic="YES" id="w1m-kt-eGS"/>
                             <constraint firstItem="iaW-lS-LT9" firstAttribute="leading" secondItem="MdB-Tp-Cep" secondAttribute="leading" id="w8m-uS-yZS"/>
-                            <constraint firstItem="cW5-Lk-cOA" firstAttribute="leading" secondItem="Iqs-B9-8Wx" secondAttribute="trailing" constant="57" id="waQ-l0-Wvd"/>
+                            <constraint firstItem="cW5-Lk-cOA" firstAttribute="leading" secondItem="Iqs-B9-8Wx" secondAttribute="trailing" constant="86" id="waQ-l0-Wvd"/>
                         </constraints>
                     </view>
                     <connections>
@@ -260,8 +294,18 @@
                         <outlet property="gridView" destination="wuI-2a-LIJ" id="2rJ-Hu-1zP"/>
                         <outlet property="positionLabel" destination="1lN-IV-iTv" id="QLm-mr-71t"/>
                         <outlet property="responseText" destination="Y00-EW-z3i" id="cAY-VL-hn5"/>
+                        <outlet property="showTail" destination="iWV-d8-vc6" id="SG8-3g-q2Q"/>
+                        <outlet property="sleepButton" destination="9WD-cK-ZIC" id="dk0-1d-ZqM"/>
                         <outlet property="speedLabel" destination="cW5-Lk-cOA" id="OrN-1D-euo"/>
                         <outlet property="view" destination="wuI-2a-LIJ" id="yQW-kF-EOo"/>
+                        <outletCollection property="directionButtons" destination="nlM-AF-uwP" collectionClass="NSMutableArray" id="COn-bv-deo"/>
+                        <outletCollection property="directionButtons" destination="YlQ-MN-gdi" collectionClass="NSMutableArray" id="YuG-fb-yTL"/>
+                        <outletCollection property="directionButtons" destination="Iqs-B9-8Wx" collectionClass="NSMutableArray" id="ii2-8P-z9z"/>
+                        <outletCollection property="directionButtons" destination="LTk-VE-uap" collectionClass="NSMutableArray" id="jVC-Ux-7zq"/>
+                        <outletCollection property="directionButtons" destination="wTg-sb-5US" collectionClass="NSMutableArray" id="6l7-qP-uYc"/>
+                        <outletCollection property="directionButtons" destination="iaW-lS-LT9" collectionClass="NSMutableArray" id="nA0-hY-qcO"/>
+                        <outletCollection property="directionButtons" destination="dMC-ke-1UN" collectionClass="NSMutableArray" id="22U-ou-ItN"/>
+                        <outletCollection property="directionButtons" destination="MdB-Tp-Cep" collectionClass="NSMutableArray" id="xbh-m8-QgT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
