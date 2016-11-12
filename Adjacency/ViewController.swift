@@ -20,6 +20,7 @@ class ViewController: UIViewController, RKResponseObserver {
     @IBOutlet weak var showTail: UIButton!
     @IBOutlet weak var sleepButton: UIButton!
     @IBOutlet var directionButtons: [UIButton]!
+    @IBOutlet weak var zeroButton: UIButton!
     
     var ledON = false
 
@@ -51,8 +52,10 @@ class ViewController: UIViewController, RKResponseObserver {
     var locatorPositionY: Float = 0.0
     
     // adjacency matrix of 100x100, will map from (x,y)-coordinates (-150,-150) to (150,150)
-    var arraySize = 1000
-    var adjMapVal: Int = 1000 / 2
+    // arraySize for lounge: 1000
+    // arraySize for maze: larger than 300, smaller than 750
+    var arraySize = 300
+    var adjMapVal: Int = 300 / 2
     
     var driveTimer: Timer!
     
@@ -68,6 +71,7 @@ class ViewController: UIViewController, RKResponseObserver {
         //RKRobotDiscoveryAgent.shared().addNotificationObserver(self, selector: #selector(handleRobotStateChangeNotification))
         showTail.layer.cornerRadius = 10
         sleepButton.layer.cornerRadius = 10
+        zeroButton.layer.cornerRadius = 10
         for button in directionButtons {
             button.layer.cornerRadius = 5
         }
@@ -122,6 +126,18 @@ class ViewController: UIViewController, RKResponseObserver {
         if let robot = self.robot {
             robot.setBackLEDBrightness(0.0)
             robot.setLEDWithRed(0.1, green: 0.8, blue: 0.2)
+        }
+    }
+    
+    @IBAction func setZeroHeading(_ sender: UIButton) {
+        if let robot = self.robot {
+            robot.setLEDWithRed(0.0, green: 0.0, blue: 0.0)
+            robot.setBackLEDBrightness(1.0)
+            robot.drive(withHeading: hdg, andVelocity: 0.0)
+            robot.setZeroHeading()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.tailOff()
         }
     }
     
@@ -282,7 +298,7 @@ class ViewController: UIViewController, RKResponseObserver {
                         robot.enableLocator(true)
                         let sensorMask = RKDataStreamingMask.locatorAll
                         robot.enableSensors(sensorMask, at: RKStreamingRate.dataStreamingRate100)
-                        robot.setZeroHeading() //current position is (0,0)
+                        robot.setZeroHeading()
                         robot.setLEDWithRed(0.1, green: 0.8, blue: 0.2)
                     }
                     break
@@ -300,8 +316,7 @@ class ViewController: UIViewController, RKResponseObserver {
             }
         }
     }
-   
 }
 
-var occupancy: [[Int]] = [[Int]](repeating:[Int](repeating:0, count:1000), count:1000)
+var occupancy: [[Int]] = [[Int]](repeating:[Int](repeating:0, count:300), count:300)
 

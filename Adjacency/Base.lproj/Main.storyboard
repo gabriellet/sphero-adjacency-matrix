@@ -73,13 +73,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iqs-B9-8Wx">
-                                <rect key="frame" x="160" y="521" width="60" height="60"/>
+                                <rect key="frame" x="160" y="523" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ZNu-Wa-TJB"/>
                                     <constraint firstAttribute="width" constant="60" id="iAz-PP-jrI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <state key="normal" title="E">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -247,6 +247,25 @@
                                     <action selector="stepperPress:" destination="BYZ-38-t0r" eventType="valueChanged" id="yKq-2a-60C"/>
                                 </connections>
                             </stepper>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UP3-sL-HUd">
+                                <rect key="frame" x="97" y="531" width="52" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.12133046490563781" blue="0.026154162557573302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="1dy-sI-oHU"/>
+                                    <constraint firstAttribute="height" constant="45" id="LUx-im-txB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="tintColor" red="1" green="0.1213304649" blue="0.026154162559999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Zero">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="driveButtonDown:" destination="BYZ-38-t0r" eventType="touchDown" id="58r-UR-trH"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fSn-kG-2YC"/>
+                                    <action selector="driveButtonUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="qZd-jq-7MZ"/>
+                                    <action selector="setZeroHeading:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qDM-j4-BC4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -255,7 +274,7 @@
                             <constraint firstItem="wuI-2a-LIJ" firstAttribute="top" secondItem="t15-EW-jqB" secondAttribute="bottom" constant="6" id="1jd-ph-yNx"/>
                             <constraint firstItem="YlQ-MN-gdi" firstAttribute="baseline" secondItem="nlM-AF-uwP" secondAttribute="baseline" id="2vM-PA-JOi"/>
                             <constraint firstItem="9WD-cK-ZIC" firstAttribute="top" secondItem="iWV-d8-vc6" secondAttribute="bottom" constant="17" id="45c-2B-9BP"/>
-                            <constraint firstItem="dMC-ke-1UN" firstAttribute="baseline" secondItem="Iqs-B9-8Wx" secondAttribute="baseline" id="49Z-sI-NDi"/>
+                            <constraint firstItem="dMC-ke-1UN" firstAttribute="baseline" secondItem="Iqs-B9-8Wx" secondAttribute="baseline" constant="-2" id="49Z-sI-NDi"/>
                             <constraint firstItem="LTk-VE-uap" firstAttribute="baseline" secondItem="iaW-lS-LT9" secondAttribute="baseline" id="4nS-gD-a0S"/>
                             <constraint firstItem="LTk-VE-uap" firstAttribute="leading" secondItem="YlQ-MN-gdi" secondAttribute="leading" id="6Vs-Ir-5p9"/>
                             <constraint firstItem="cW5-Lk-cOA" firstAttribute="top" secondItem="2Qd-95-UoR" secondAttribute="bottom" constant="-60" id="Bcm-w2-Gxq"/>
@@ -264,12 +283,14 @@
                             <constraint firstItem="7Oh-Xa-lrC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="87" id="Koz-VU-iiQ"/>
                             <constraint firstItem="9WD-cK-ZIC" firstAttribute="top" secondItem="cW5-Lk-cOA" secondAttribute="bottom" constant="127" id="NC0-VX-8pq"/>
                             <constraint firstItem="LTk-VE-uap" firstAttribute="leading" secondItem="Iqs-B9-8Wx" secondAttribute="leading" id="NGi-gL-7zl"/>
+                            <constraint firstItem="UP3-sL-HUd" firstAttribute="centerX" secondItem="wTg-sb-5US" secondAttribute="centerX" id="NOc-Nv-Ad5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cW5-Lk-cOA" secondAttribute="trailing" constant="6" id="NYf-N5-wEv"/>
                             <constraint firstItem="1lN-IV-iTv" firstAttribute="leading" secondItem="7Oh-Xa-lrC" secondAttribute="trailing" constant="11" id="ORW-50-JPg"/>
                             <constraint firstItem="iWV-d8-vc6" firstAttribute="centerX" secondItem="2Qd-95-UoR" secondAttribute="centerX" id="PnN-0L-K7T"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9WD-cK-ZIC" secondAttribute="trailing" constant="19" id="QaC-pa-lDb"/>
                             <constraint firstItem="dMC-ke-1UN" firstAttribute="top" secondItem="MdB-Tp-Cep" secondAttribute="bottom" constant="8" symbolic="YES" id="Uxj-D3-azD"/>
                             <constraint firstItem="dMC-ke-1UN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="Vxx-iV-rdc"/>
+                            <constraint firstItem="UP3-sL-HUd" firstAttribute="centerY" secondItem="dMC-ke-1UN" secondAttribute="centerY" id="W5w-4k-PRh"/>
                             <constraint firstItem="9WD-cK-ZIC" firstAttribute="centerX" secondItem="HdW-To-jNS" secondAttribute="centerX" constant="25.5" id="XIc-8F-bIH"/>
                             <constraint firstItem="wuI-2a-LIJ" firstAttribute="centerX" secondItem="t15-EW-jqB" secondAttribute="centerX" id="ZB0-5W-9ub"/>
                             <constraint firstItem="wuI-2a-LIJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ecL-8C-paN"/>
@@ -298,6 +319,7 @@
                         <outlet property="sleepButton" destination="9WD-cK-ZIC" id="dk0-1d-ZqM"/>
                         <outlet property="speedLabel" destination="cW5-Lk-cOA" id="OrN-1D-euo"/>
                         <outlet property="view" destination="wuI-2a-LIJ" id="yQW-kF-EOo"/>
+                        <outlet property="zeroButton" destination="UP3-sL-HUd" id="VLQ-jL-pge"/>
                         <outletCollection property="directionButtons" destination="nlM-AF-uwP" collectionClass="NSMutableArray" id="COn-bv-deo"/>
                         <outletCollection property="directionButtons" destination="YlQ-MN-gdi" collectionClass="NSMutableArray" id="YuG-fb-yTL"/>
                         <outletCollection property="directionButtons" destination="Iqs-B9-8Wx" collectionClass="NSMutableArray" id="ii2-8P-z9z"/>

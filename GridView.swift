@@ -25,7 +25,7 @@ class GridView: UIView {
         context.fill(rect)
         
         // size of grid squares
-        let step: CGFloat = 20.0
+        let step: CGFloat = 10.0
         
         // calculate smaller dimension, use to calculate offset
         let smallerDim = min(rect.size.width, rect.size.height)
@@ -63,8 +63,8 @@ class GridView: UIView {
         
         // translate occupancy grid to matrix of values to print
         // (scale matrix down to grid size)
-        let cells = 12
-        let scaleFactor = occupancy.count / cells
+        let cells = Int(dim)
+        let scaleFactor = Int(ceil(CGFloat(occupancy.count) / dim))
         var filled = [[Bool]](repeating:[Bool](repeating:false, count:cells), count:cells)
         for a in stride(from: 0, through: occupancy.count-scaleFactor, by: scaleFactor) {
             for b in stride(from: 0, through: occupancy[a].count-scaleFactor, by: scaleFactor) {
